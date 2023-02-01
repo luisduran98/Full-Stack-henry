@@ -63,7 +63,7 @@ BinarySearchTree.prototype.breadthFirstForEach = function(cb, array = []){
 
 BinarySearchTree.prototype.depthFirstForEach = function(cb, orden){
   // "pre-orden = rood - left - right"
-  if (orden === "pre-orden"){
+  if (orden === "pre-order"){
     cb(this.value)
     if (this.left !== null) this.left.depthFirstForEach(cb, orden);
     if (this.right !== null) this.right.depthFirstForEach(cb, orden);
@@ -71,7 +71,7 @@ BinarySearchTree.prototype.depthFirstForEach = function(cb, orden){
 
   // post-orden = left - right - rood
 
-  else if(orden === "post-orden"){
+  else if(orden === "post-order"){
     if (this.left !== null) this.left.depthFirstForEach(cb, orden);
     if (this.right !== null) this.right.depthFirstForEach(cb, orden);
     cb(this.value);
